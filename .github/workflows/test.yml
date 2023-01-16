@@ -1,0 +1,30 @@
+name: "build-test-run"
+  # TODO: if releases tags/branches are introduced, add appropriate trigger(s) below
+on:
+  pull_request:
+  push:
+   branches:
+    - main
+    - dev
+
+jobs:
+  test-build:
+    name: Check build and tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: yarn install
+      - run: yarn package
+      - run: yarn test
+
+  test-run:
+    name: Check Action live test run (no network)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./
+        with:
+          performTestRun: "true" # DO NOT FORGET THIS HERE
+          githubPullRequestBranchName: "TEST_RUN_NO_GITHUB_PR_NAME"
+          linearApiKey: "TEST_RUN_NO_API_KEY"
+          linearCommentText: "If you see this in your Linear workspace, something went very wrong."

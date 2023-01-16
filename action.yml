@@ -1,0 +1,30 @@
+name: "linear-automation-actions"
+description: "GitHub Action to automate usage of the Linear application, an issue-tracking tool."
+
+branding:
+  icon: "layout"
+  color: "purple"
+
+inputs:
+  performTestRun:
+    required: false
+    description: Used internally for basic live testing. If 'true', will just log information (nothing confidential) and set empty outputs, with no Linear interaction at all.
+  githubPullRequestBranchName:
+    required: true
+    description: Name of the Pull Request source branch, linking to the Linear issue.
+  linearApiKey:
+    required: true
+    description: Your Linear API Key (required). Keep it secret.
+  linearCommentText:
+    required: true
+    description: Text of tbe comment to add to the linked issue. In Markdown.
+
+outputs:
+  postedLinearCommentId:
+    description: The ID of the Linear comment that was posted on the linked issue.
+  postedOnLinearIssueId:
+    description: The linked Linear issue ID on which the comment was posted.
+
+runs:
+  using: "node16"
+  main: "dist/index.js"

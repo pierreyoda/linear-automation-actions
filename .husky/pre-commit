@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# why packaging: needed for mandatory runner requirements, should be quick enough on any dev machine
+yarn test && yarn package && git add dist/
