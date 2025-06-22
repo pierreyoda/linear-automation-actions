@@ -1,6 +1,6 @@
 {
   "name": "linear-automation-actions",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Custom GitHub Action to interact with Linear through their official SDK.",
   "main": "src/main.ts",
   "repository": "git@github.com:pierreyoda/linear-automation-actions.git",
@@ -16,7 +16,7 @@
 
   "dependencies": {
     "@actions/core": "1.10.0",
-    "@linear/sdk": "1.22.0"
+    "@linear/sdk": "2.0.0"
   },
   "devDependencies": {
     "@types/jest": "29.2.5",

@@ -1,8 +1,10 @@
-# gh-action-linear-comment-linked-issue
+# linear-automation-actions
 
 Custom GitHub Action dealing with Linear automation. Linear is an issues tracking software solution.
 
 For now, only one workflow is supported.
+
+Feel free to audit the code before using this Action, and please open an issue on this repository if something is not quite right.
 
 ## Posting a Linear comment in the branch-linked issue
 
@@ -42,7 +44,7 @@ This Action, despite being in a working state, will stay `v0` until enough diffe
 
 Uses the official [GitHub Actions Toolkit](https://github.com/actions/toolkit), with inspiration from the [official Typescript example](https://github.com/actions/typescript-action).
 
-Also uses the official Linear SDK ([GitHub](https://github.com/linear/linear/tree/master/packages/sdk), [documentation](https://developers.linear.app/docs/sdk/getting-started)), as [recommended](https://developers.linear.app/docs/graphql/working-with-the-graphql-api#linear-sdk) over the public GraphQL API, which the SDK wraps.
+Also uses the official Linear SDK ([GitHub](https://github.com/linear/linear/tree/master/packages/sdk), [documentation](https://developers.linear.app/docs/sdk/getting-started)), as [recommended](https://developers.linear.app/docs/graphql/working-with-the-graphql-api#linear-sdk) over the public GraphQL API, which the SDK wraps. The latest stable version of this SDK should be used here (2.0 right now).
 
 Do note that the `dist/` is not in `.gitignore` for usage in [Javascript GitHub Actions](https://docs.github.com/en/actions/creating-actions/creating-a-javascript-action#introduction).
 

@@ -64,7 +64,7 @@ export const postCommentInLinearIssue = async (client: LinearClient, issueId: st
   */
   postedOnIssueId: string;
 }> => {
-  const result = await client.commentCreate({
+  const result = await client.createComment({
     issueId,
     body: markdownText,
     id: undefined, // just in case the SDK default changes (unlikely); the ID will be auto-generated
